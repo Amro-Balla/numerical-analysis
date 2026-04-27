@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisection Method</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- TITLE -->
+    <h1 class="title">Simple Fixed Point</h1>
+
+    <div class="page">
+      <!-- LEFT -->
+      <div class="container">
+        <div class="card inputs">
+          <h2>Inputs</h2>
+
+          <input id="gx" placeholder="gx" />
+          <input id="x0" placeholder="X0" />
+          <input id="error" placeholder="error%" />
+
+          <button onclick="solveFixedPoint()">Calculate</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card output">
+        <h2>Output</h2>
+        <p id="waiting">Root will appear here...</p>
+        <div id="output-card" class="hidden">
+          <table>
+            <thead>
+              <tr>
+                <th>i</th>
+                <th>Xi</th>
+                <th>f(Xi)</th>
+                <th>Error %</th>
+              </tr>
+            </thead>
+            <tbody id="result"></tbody>
+          </table>
+        </div>
+        <canvas id="graph" width="650" height="350"></canvas>
+      </div>
+    </div>
+    <script src="code.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisection Method</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- TITLE -->
+    <h1 class="title">False position Method</h1>
+
+    <div class="page">
+      <!-- LEFT -->
+      <div class="container">
+        <div class="card inputs">
+          <h2>Inputs</h2>
+
+          <input id="fx" placeholder="f(x)" />
+          <input id="xl" placeholder="Xl" />
+          <input id="xu" placeholder="Xu" />
+          <input id="error" placeholder="error%" />
+          <button onclick="solveFalsePosition()">Calculate</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card output">
+        <h2>Output</h2>
+        <p id="waiting">Root will appear here...</p>
+        <div id="output-card" class="hidden">
+          <table>
+            <thead>
+              <tr>
+                <th>i</th>
+                <th>Xl</th>
+                <th>f(Xl)</th>
+                <th>Xu</th>
+                <th>f(Xu)</th>
+                <th>Xr</th>
+                <th>f(Xr)</th>
+                <th>Error %</th>
+              </tr>
+            </thead>
+            <tbody id="result"></tbody>
+          </table>
+        </div>
+        <canvas id="graph" width="650" height="350"></canvas>
+      </div>
+    </div>
+    <script src="code.js"></script>
+  </body>
+</html>

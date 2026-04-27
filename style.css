@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background: radial-gradient(circle at top, #0a0f1f, #02050d);
+}
+
+.index-page {
+  overflow: hidden;
+
+  background: radial-gradient(circle at top, #0a0f1f, #02050d);
+
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== container ===== */
+.circle-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+}
+
+/* ===== center ===== */
+.center {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.25);
+}
+
+/* ===== items ===== */
+.item {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+
+  transition: 0.3s ease;
+
+  /* 9 items → 360 / 9 = 40deg */
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * 40deg)) translate(230px) rotate(calc(-1 * var(--i) * 40deg));
+}
+
+/* hover */
+.item:hover {
+  background: #00f0ff;
+  color: black;
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * 40deg)) translate(230px) rotate(calc(-1 * var(--i) * 40deg)) scale(1.15);
+
+  box-shadow: 0 0 30px #00f0ff;
+}
+
+/* background glow */
+.circle-container::before {
+  content: "";
+  position: absolute;
+
+  width: 800px;
+  height: 800px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 60%);
+  z-index: -1;
+}
+
+/* ===== reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ===== title ===== */
+.title {
+  text-align: center;
+  color: #00f0ff;
+  font-size: 34px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* ===== الصفحة كلها ===== */
+.page {
+  flex: 1;
+  width: 85%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 40px;
+}
+
+/* ===== الشمال (inputs) ===== */
+.container {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== cards ===== */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  padding: 20px;
+  border-radius: 15px;
+
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* card title */
+.card h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #00f0ff;
+}
+
+/* inputs */
+input {
+  width: 100%;
+
+  padding: 10px;
+  margin: 8px 0;
+
+  border: none;
+  outline: none;
+  border-radius: 8px;
+
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+/* button */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #00f0ff;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00bcd4;
+  transform: scale(1.05);
+}
+
+/* ===== اليمين (output) ===== */
+.output {
+  width: 700px;
+  text-align: center;
+}
+
+.output p {
+  margin-top: 40px;
+  color: #ccc;
+}
+
+/* ========================= */
+/* GAUSS MATRIX */
+/* ========================= */
+.in {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(3, 70px);
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.in input {
+  width: 90px;
+  height: 60px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.in input:hover {
+  transform: scale(1.07);
+}
+
+.in input:focus {
+  transform: scale(1.1);
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== GAUSS OUTPUT ===== */
+/* container للجدول */
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* الجدول نفسه */
+.table-container table {
+  width: 95vw;
+  /* 👈 مهم جدًا: viewport width */
+  max-width: 1300px;
+  /* 👈 سقف للعرض */
+  min-width: 800px;
+  /* 👈 يمنعه يصغر */
+
+  margin: 0 auto;
+
+  border-collapse: collapse;
+}
+
+/* container للخطوات */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+/* كل خطوة */
+.step-box {
+  width: 95%;
+  max-width: 1100px;
+
+  margin: 10px auto 30px auto;
+
+  padding: 15px 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  border-radius: 15px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  text-align: center;
+
+  line-height: 1.8;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* الأرقام داخل القانون */
+.step-box b {
+  color: #00c6ff;
+}
+
+.matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  width: 60px;
+  height: 35px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.row input:last-child {
+  margin-left: 15px;
+  border-left: 3px solid #000;
+}
+
+canvas {
+  display: block;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+}
+
+/* tables */
+
+.hidden {
+  display: none;
+}
+
+#output-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#output-card th,
+#output-card td {
+  padding: 10px 14px;
+  text-align: center;
+}
+
+#output-card tbody tr:hover {
+  background-color: #e3f2fd;
+  color: #000;
+  transition: 0.3s;
+}
+
+#output-card th {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
